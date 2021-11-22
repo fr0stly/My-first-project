@@ -1,0 +1,56 @@
+.skills {
+  @include sm-min {
+    padding: 10px 10px 40px;
+  }
+  @include sm-max {
+    padding: 20px;
+  }
+  &__container {
+    display: grid;
+
+    padding-bottom: 20px;
+
+    @include sm-md {
+      grid-auto-rows: calc(33.33333vh - 13.3333333px);
+    }
+    @include lg-min {
+      gap: 10px;
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include lg-max {
+      gap: 10px;
+      grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      gap: 10px;
+      grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+      grid-template-columns: 1fr 1fr;
+    }
+    @include md-max {
+      grid-auto-rows: calc(230px - 13.3333333px);
+    }
+    @include sm-max {
+      gap: 20px;
+      grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+      grid-template-columns: 1fr;
+    }
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+
+    @include sm-min {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+
+      min-width: 350px;
+    }
+    @include sm-max {
+      width: 100%;
+    }
+  }
+}

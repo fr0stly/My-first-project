@@ -1,0 +1,139 @@
+.posts {
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @include lg-max {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @include md-max {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.posts__grid {
+  display: grid;
+
+  padding-bottom: 20px;
+
+  gap: 20px;
+  @include lg-min {
+    grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include lg-max {
+    grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include md-sm {
+    grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+    grid-template-columns: 1fr 1fr;
+  }
+  @include sm-max {
+    grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    grid-template-columns: 1fr;
+  }
+}
+.post-item {
+  transition: background-color 0.5s;
+
+  background-color: #f2f2f2;
+
+  &:hover {
+    background-color: #d8d8d8;
+  }
+
+  &:hover .post-item__image img {
+    transform: scale(1.1);
+  }
+
+  &:hover h3 {
+    color: $color-primary;
+  }
+
+  &:hover p {
+    color: $color-primary;
+  }
+
+  &__link {
+    display: grid;
+    overflow: hidden;
+
+    height: 100%;
+
+    grid-template-rows: 300px 1fr;
+  }
+
+  &__image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+
+    background-color: $color-primary;
+
+    img {
+      width: 100%;
+
+      transition: -webkit-transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
+
+      object-fit: cover;
+    }
+  }
+
+  &__caption {
+    display: grid;
+    align-content: center;
+
+    padding: 20px;
+
+    h3 {
+      transition: color 0.5s;
+      text-align: center;
+
+      font-family: "Roboto Slab", serif;
+    }
+
+    p {
+      transition: color 0.5s;
+      text-align: center;
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .post-item:nth-of-type(#{$i}) {
+    grid-area: p#{$i};
+  }
+}
+
+.posts__container {
+  max-width: 1340px;
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.posts h2 {
+  margin-top: 0;
+}
+
+.posts__actions {
+  @include sm-min {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+
+    min-width: 350px;
+  }
+  @include sm-max {
+    width: 100%;
+  }
+}
