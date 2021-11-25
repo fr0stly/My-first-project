@@ -15,18 +15,15 @@
     }
   }
   &__image {
-    position: absolute;
-
     transition: transform 0.5s;
 
     background-color: $color-primary;
     background-position: center;
     background-size: cover;
 
-    inset: 0;
+    @include abs-position;
   }
   &__title {
-    position: absolute;
     z-index: 1;
 
     margin: 0;
@@ -34,10 +31,10 @@
     @include md-min {
       font-size: 1.25rem;
     }
-    @include md-max {
+    @include md {
       font-size: 1.125rem;
     }
-    inset: 0;
+    @include abs-position;
   }
   &__link {
     display: flex;
@@ -46,19 +43,17 @@
 
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: $gap;
 
     transition: color 0.5s;
   }
   &__overlay {
-    position: absolute;
-
     transition: background-color 0.5s;
 
     opacity: 0.8;
     background-color: $color-primary;
 
-    inset: 0;
+    @include abs-position;
   }
 }
 

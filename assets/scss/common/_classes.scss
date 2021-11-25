@@ -1,3 +1,6 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,7 +31,7 @@
   @include lg-min {
     min-width: 250px;
   }
-  @include lg-max {
+  @include lg {
     min-width: 200px;
     height: 50px;
 
@@ -42,7 +45,7 @@
 
     font-size: 1rem;
   }
-  @include sm-max {
+  @include sm {
     min-width: 170px;
     height: 40px;
 
@@ -59,7 +62,7 @@
   @include sm-min {
     min-width: 350px;
   }
-  @include sm-max {
+  @include sm {
     width: 100%;
   }
 }

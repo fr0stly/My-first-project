@@ -1,5 +1,5 @@
 .footer {
-  padding: 50px 20px 70px;
+  padding: 50px $gap 70px;
 
   text-align: center;
 
@@ -8,8 +8,8 @@
   &__container {
     max-width: 1340px;
     margin: auto;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: $gap;
+    padding-left: $gap;
   }
   &__social {
     position: relative;
