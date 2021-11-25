@@ -7,6 +7,8 @@ $(document).ready(() => {
     $('.header-navbar__list')
       .stop(true, true)
       .slideToggle(500);
+
+      
   });
 
 });
